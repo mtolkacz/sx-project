@@ -5,6 +5,6 @@ urlpatterns = [
     path(
         route='zadanie1/',
         view=apiv1_views.JsonShaDataListAPI.as_view(),
-        name='zad1',
+        name='api',
     ),
 ]

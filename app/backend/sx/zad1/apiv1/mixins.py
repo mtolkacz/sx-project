@@ -1,6 +1,6 @@
 import hashlib
 
-from ..exceptions import DataListNotFound
+from ..exceptions import DataListNotFound, DatalistKeyError
 
 
 class JsonShaDataListMixin(object):
@@ -19,7 +19,11 @@ class JsonShaDataListMixin(object):
         self.data_list = self.get_datalist_parameter()
 
     def get_sorted_datalist(self):
-        return sorted(self.data_list, key=lambda row: (row['second_name'], row['first_name']))
+        try:
+            sorted_list = sorted(self.data_list, key=lambda row: (row['second_name'], row['first_name']))
+        except KeyError as ex:
+            raise DatalistKeyError
+        return sorted_list
 
     def set_result(self):
         self.result = self.get_sorted_datalist()

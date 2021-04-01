@@ -11,17 +11,17 @@
 > 2. Get json input of bitcoin amount and calculate price based on current orderbook (https://bitbay.net/API/Public/BTCPLN/orderbook.json)
 
 ## Testing
->1. 
+>Project level unit and functional tests
+>> docker-compose -f local.yml exec backend pytest
+
+>1. App zadanie 1
 >>curl -X POST -H "Content-Type: application/json" -d @test_file2.json http://localhost:8000/zadanie1/
->2. 
+>2. App zadanie 2
 >>curl -X POST -H "Content-Type: application/json" -d @test_file.json http://localhost:8000/zadanie2/
 
 ## Example env file for local development
 * There are example env files in /env/dev/.env or /env/prod/., which normally would be excluded from repository
 ## Run application
 > sh start.sh
-## Comments
->HTTP used for development purposes -> switch to HTTPS for production deployment
-
 
 

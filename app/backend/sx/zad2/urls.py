@@ -5,6 +5,6 @@ urlpatterns = [
     path(
         route='zadanie2/',
         view=apiv1_views.BitcoinBIDPriceAPI.as_view(),
-        name='zad2',
+        name='api',
     ),
 ]
